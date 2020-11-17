@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<title>mainza button</title>	
+</head>
+
+<body class="buttonPage">
+	<header>
+		<h1>This is the Button Page</h1>
+	</header>
+	
+	<div class="w3-container">
+	  <p>Click on the "Navigate" button to navigate the pages.</p>
+	  <div class="w3-dropdown-click">
+		<button onclick="myFunction()" title="Navigate Button">Navigate</button>
+		<div id="Nav" class="w3-dropdown-content">
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="index.html" class="w3-button">Index Page</a>
+		  <a href="inputs.html" class="w3-button" onclick="window.open(this.options[this.selectedIndex].value,'_blank')">Inputs Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="div.html" class="w3-button">Div Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="paragraph.html" class="w3-button">Paragraph Page</a>
+		</div>
+	  </div>
+	</div>
+	
+<div>
+Enter Text Here:<input type="text" id="textBox"></input>
+	<button id="subBtn" title="Submit to Console Button">Submit Your Text to the Console</button>
+	<script>
+	document.getElementById("subBtn").onclick = function(){
+	var f = document.getElementById("textBox").value;
+	console.log(f);
+	}
+	</script>
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("Nav");
+	  if (x.className.indexOf("w3-show") == -1) { 
+		x.className += " w3-show";
+	  } else {
+		x.className = x.className.replace(" w3-show", "");
+	  }
+	}
+	</script>
+</div>
+	
+</body>
+</html>

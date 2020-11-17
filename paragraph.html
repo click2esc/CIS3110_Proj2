@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<title>mainza paragraph</title>	
+</head>
+
+<body class="paragraphPage">
+	<header>
+		<h1>This is the Paragraph Page</h1>
+	</header>
+	
+	<div class="w3-container">
+	  <p>Click on the "Navigate" button to navigate the pages.</p>
+	  <div class="w3-dropdown-click">
+		<button onclick="myFunction()" title="Navigate Button">Navigate</button>
+		<div id="Nav" class="w3-dropdown-content">
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="index.html" class="w3-button">Index Page</a>
+		  <a href="inputs.html" class="w3-button" onclick="window.open(this.options[this.selectedIndex].value,'_blank')">Inputs Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="button.html" class="w3-button">Button Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="div.html" class="w3-button">Div Page</a>
+		</div>
+	  </div>
+	</div>
+	
+	<div>
+		<p>Type the number, of the page you wish to view, into the input box.</p>
+		<ol>
+			<li>for Index Page</li>
+			<li>for Inputs Page</li>
+			<li>for Button Page</li>
+			<li>for Div Page</li>
+			<li>for Paragraph Page</li>
+		</ol>
+		<input id="inputNum" type="number"></input>
+		<button id="subPara" onclick="check()" title="Submit Button">Submit</button>
+		<p id="linkOut">
+		</p>
+		
+		<script>
+			function check() {
+				var a = document.getElementById("inputNum").value;
+				if(a == 1) {
+					document.getElementById("linkOut").innerHTML = "<a href='index.html' title=\"Index Page\">Index Page</a>";
+				}else if (a == 2) {
+					document.getElementById("linkOut").innerHTML = "<a href='inputs.html' title='Inputs Page'>Inputs Page</a>";
+				}else if (a == 3) {
+					document.getElementById("linkOut").innerHTML = "<a href='button.html' title='Button Page'>Button Page</a>";
+				}else if (a == 4) {
+					document.getElementById("linkOut").innerHTML = "<a href='div.html' title='Div Page'>Div Page</a>";
+				}else if (a == 5) {
+					document.getElementById("linkOut").innerHTML = "<a href='paragraph.html' title='Paragraph Page'>Paragraph Page</a>";
+				}else {
+					document.getElementById("linkOut").innerHTML = "You Didn't Enter a Valid Selection";
+				}
+			}
+		</script>
+	</div>
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("Nav");
+	  if (x.className.indexOf("w3-show") == -1) { 
+		x.className += " w3-show";
+	  } else {
+		x.className = x.className.replace(" w3-show", "");
+	  }
+	}
+	</script>	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<title>mainza inputs</title>	
+</head>
+
+<body class="inputsPage">
+	<header>
+		<h1>This is the Inputs Page</h1>
+	</header>
+	
+	<div class="w3-container">
+	  <p>Click on the "Navigate" button to navigate the pages.</p>
+	  <div class="w3-dropdown-click">
+		<button onclick="myFunction()" title="Navigate Button">Navigate</button>
+		<div id="Nav" class="w3-dropdown-content">
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="index.html" class="w3-button">Index Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="button.html" class="w3-button">Button Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="div.html" class="w3-button">Div Page</a>
+		  <a onclick="window.open(this.options[this.selectedIndex].value,'_blank')" href="paragraph.html" class="w3-button">Paragraph Page</a>
+		</div>
+	  </div>
+	</div>
+	
+	<div>
+		Enter Your Name:<input type="text" name="name">	
+		<p>Enter a Number:<input type="number" name="number"></p>
+	</div>
+	<script>
+	function myFunction() {
+	  var x = document.getElementById("Nav");
+	  if (x.className.indexOf("w3-show") == -1) { 
+		x.className += " w3-show";
+	  } else {
+		x.className = x.className.replace(" w3-show", "");
+	  }
+	}
+	</script>
+</body>
+</html>

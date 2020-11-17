@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Manny's Login Page</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+        <!-- Favicons -->
+    <link rel="icon" href="https://www.mitchellaplc.com/wp-content/themes/mitchell/images/favicon/favicon.ico">
+    
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.4/examples/sign-in/signin.css" rel="stylesheet">
+    
+    <!-- Cookie Sampler code from professor GitHub -->
+    <script>
+    
+    function setCookie(cname,cvalue,exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname+"="+cvalue+"; "+expires;
+    }
+    
+    function submitStuff()
+    {
+        if (document.getElementById("inputUser").value !="" &&
+            document.getElementById("inputPassword").value !="")
+        {
+        console.log("authenticated");
+        setCookie("username", document.getElementById("inputUser").value, 30);
+        setTimeout(function(){window.location.assign("index.html");}, 2500);
+        }else alert("Please Complete All Fields");
+    }
+    
+    </script>
+  </head>
+  <body class="text-center">
+      
+<form class="form-signin">
+  <img class="mb-4" src="https://www.mitchellaplc.com/wp-content/themes/mitchell/images/favicon/mstile-70x70.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputUser" class="sr-only">Username</label>
+  <input type="text" id="inputUser" class="form-control" placeholder="Enter Username" autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password">
+  
+  <button id="loginBtn" onclick="submitStuff()" class="btn btn-lg btn-primary btn-block" type="button" >Sign in</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+
+</body>
+</html>
